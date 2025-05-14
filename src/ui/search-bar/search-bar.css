@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+:root {
+  --green-100: #03cc5c;
+  --green-200: #1bf008;
+  --green-300: #03cca8;
+
+  --gray-100: #bcc3c7;
+  --gray-200: #9b9a90;
+  --gray-300: #6d7478;
+
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+}
+
+/* body 여백 */
 body {
   margin: 3.125rem;
 }
+
 /* 컴포넌트 스타일링 */
 /* 텍스트 로고 */
 .text-logo {
-  --start-color: #1bf008;
-  --end-color: #03cca8;
   --size: 2.125rem;
 
   display: inline-flex;
@@ -40,16 +53,19 @@ body {
   }
 
   input {
+    --border-color: var(--gray-200);
+    --inactive-color: var(--gray-100);
+
     min-inline-size: 0;
     flex-grow: 1;
-    border: 1px solid #aaa;
+    border: 1px solid var(--border-color);
     block-size: 32px;
     padding-inline: 0.5em;
     border-radius: 8px;
 
     &[readonly],
     &:read-only {
-      background-color: #ccc;
+      background-color: var(--inactive-color);
     }
   }
 }
@@ -87,39 +103,76 @@ button:disabled {
   }
 }
 
-/* 검색 바 (폼 스타일링) */
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 20rem;
-  height: 3rem;
-  border: 1px solid #03cc5c;
-  border-radius: 50px;
-  padding: 12px;
-}
-
-.search-bar-circle-button {
+/* 버튼 스타일링 (원형 그라디언트 버튼)*/
+.circle-button {
   --size: 1.5rem;
-  --start-color: #1bf008;
-  --end-color: #03cca8;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
+
   border: 0;
   padding: 0;
+  background: var(--start-color) linear-gradient(-45deg, var(--end-color), var(--start-color));
   inline-size: var(--size);
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: var(--start-color) linear-gradient(-45deg, var(--start-color), var(--end-color));
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 
   &::before {
     content: '';
     inline-size: 40%;
     block-size: 40%;
-    background-color: #fff;
+    background: #fff;
     border-radius: inherit;
+  }
+}
+
+/* 검색 바 (폼 스타일링) */
+.search-bar {
+  --border-color: var(--green-100);
+  --shadow-color: var(--gray-100);
+
+  border: 2px solid var(--border-color);
+  padding: 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 0.75rem;
+  border-radius: 6.25rem;
+
+  &:focus-within {
+    box-shadow: 0 2px 2px 1px var(--shadow-color);
+  }
+
+  a,
+  button {
+    flex-shrink: 0;
+  }
+
+  a {
+    margin-inline-start: 0.5rem;
+  }
+
+  form {
+    display: contents;
+  }
+
+  .form-input {
+    flex-grow: 1;
+
+    input {
+      border: 0;
+      outline: 0 none;
+      font-weight: 700;
+      appearance: none;
+
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+  }
+
+  button {
+    margin-inline-start: 0.25rem;
   }
 }
