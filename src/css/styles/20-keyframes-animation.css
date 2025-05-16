@@ -16,22 +16,8 @@ body {
   }
 }
 
+/* 애니메이션 속성 학습을 위한 예제 */
 .like {
-  border: 5px solid currentColor;
-  padding: 10px;
-  width: 100px;
-  /* animation-name: zoom;
-  animation-duration: 5s;
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-delay: 1s;
-  animation-fill-mode: both;
-  animation-play-state: paused; */
-  animation: zoom 5s 1s 3 alternate ease-in-out forwards running;
-}
-
-.zoom .target-animation {
   border: 5px solid currentColor;
   padding: 10px;
   width: 100px;
@@ -58,11 +44,26 @@ body {
   margin-block: 15px;
 }
 
+/* Fade 애니메이션 */
 .fade .target-animation {
-  animation-name: fade;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate;
+  animation: fade 3s infinite linear;
   animation-play-state: paused;
+}
+
+/* Shrink 애니메이션 */
+.shrink .target-animation {
+  animation: shrink 2s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+/* Bounce 애니메이션 */
+.bounce .target-animation {
+  animation: bounce 2s infinite ease-in-out alternate;
+  animation-play-state: paused;
+}
+
+/* Shake 애니메이션 */
+.shake .target-animation {
+  animation: shake 2s infinite ease-in-out alternate;
+  animation-play-state: running;
 }

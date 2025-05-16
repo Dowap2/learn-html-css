@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Fade 애니메이션 */
 @keyframes fade {
   0% {
@@ -7,3 +8,38 @@
     opacity: 0;
   }
 }
+=======
+/* 애니메이션 관련 CSS */
+/* Fade 애니메이션 */
+@keyframes fade {
+  0%{ opacity: 1; }
+  100%{ opacity: 0; }
+}
+
+/* Shrink 애니메이션 */
+@keyframes shrink {
+  0%{ width: 100%; }
+  100%{ width: 50%; font-size: .75rem;}
+}
+
+/* Bounce 애니메이션 */
+@keyframes bounce {
+  /* 0%{margin: 0;}
+  100%{ margin-top: -20px;} */
+
+  /* 0%{ position: relative; top: 0}
+  100%{ position: relative; top: -20px} */
+
+  /* 0%{ transform: translateY(0)}
+  100%{ transform: translateY(-20px);} */
+
+  0%{ translate: 0;}
+  100%{translate: 0 -20px;}
+}
+
+/* Shake 애니메이션 */
+@keyframes shake {
+  0%{ translate: 0;}
+  100%{translate: -20px 0;}
+}
+>>>>>>> 926853670bbfb4536837f499c13a36b911c06aa7
