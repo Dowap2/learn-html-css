@@ -93,4 +93,23 @@
       transform: translateX(-5px) rotate(-1deg);
   }
 }
+<<<<<<< HEAD
 >>>>>>> a526c493c7afd6495acc788693e66717c1472a5d
+=======
+
+@property --rotation {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* CSS 변수를 활용한 애니메이션 */
+@keyframes rotate {
+  0% {
+    --rotation: 0deg;
+  }
+  100% {
+    --rotation: 360deg
+  }
+}
+>>>>>>> 21af9ea71d970f53be37fb5f99773f65aad54542

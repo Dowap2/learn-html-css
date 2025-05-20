@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CSS 마스크 */
 body {
   margin: 50px;
@@ -5,6 +6,30 @@ body {
 
 /* CSS 마스크 */
 .like {
+=======
+body{
+  margin: 50px;
+}
+
+@property --size {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes mask-animation {
+  0% {
+    --size: 0%;
+  }
+  100% {
+    --size: 50%;
+  }
+}
+
+
+/* CSS 마스크 */
+.like{
+>>>>>>> 21af9ea71d970f53be37fb5f99773f65aad54542
   --size: 0%;
 
   border: 2px solid currentColor;
@@ -22,6 +47,7 @@ body {
   animation: mask-animation 5s alternate ease-in-out infinite;
   animation-play-state: paused; */
 
+<<<<<<< HEAD
   mask-image: linear-gradient(0deg, transparent 0% 45%, #000 45% 55%, transparent 55% 100%), linear-gradient(90deg, transparent 0% 45%, #000 45% 55%, transparent 55% 100%);
   mask-clip: content-box;
 }
@@ -33,3 +59,19 @@ body {
 
   mask: url(/src/assets/svg//rice.svg) 0 0 / cover;
 }
+=======
+  mask-image: 
+    linear-gradient(0deg, transparent 0% 45%, #000 45% 55%, transparent 55% 100%),
+    linear-gradient(90deg, transparent 0% 45%, #000 45% 55%, transparent 55% 100%)
+  ;
+  mask-clip: content-box;
+}
+
+.lion{
+  inline-size: 50px;
+  block-size: 50px;
+  background-image: linear-gradient(red, green, blue, yellow, pink);
+
+  mask: url(/src/assets/svg/rice.svg) 0 0 / cover;
+}
+>>>>>>> 21af9ea71d970f53be37fb5f99773f65aad54542
