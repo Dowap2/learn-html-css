@@ -47,25 +47,31 @@ body {
 .layout {
   display: grid;
   grid-template-columns: [full-start] minmax(16px, 1fr) [content-start] repeat(12, minmax(85px, 1fr)) [content-end] minmax(16px, 1fr) [full-end];
+  grid-auto-rows: 50px;
+  color: white;
 
   .header {
     background: red;
+    grid-column: 3 / span 5;
   }
 
   .navigation {
     background: green;
+    grid-column: full;
   }
 
   .main {
     background: blue;
+    grid-column: content;
   }
 
   .sidebar {
     background: purple;
+    grid-column: 10 / full-end;
   }
 
   .footer {
     background: gray;
+    grid-column: content-start / full-end;
   }
-
 }
